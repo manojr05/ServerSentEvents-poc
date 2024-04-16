@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SsePocApplication {
+public class SSEPocApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SsePocApplication.class, args);
+		SpringApplication.run(SSEPocApplication.class, args);
 	}
 
 }
