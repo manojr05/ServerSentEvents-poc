@@ -18,8 +18,7 @@ public class SSEController {
 
     @PostMapping("/send-event")
     public String sendEvent(@RequestBody String payload) {
-        String eventData = "Payload received: " + payload + " @ " + LocalTime.now();
-        eventProcessor.onNext(eventData);
+        eventProcessor.onNext(payload);
         return "Event sent successfully!";
     }
 
