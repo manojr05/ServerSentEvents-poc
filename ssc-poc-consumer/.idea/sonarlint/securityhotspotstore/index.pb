@@ -9,3 +9,5 @@ n
 >src/main/java/com/ssepoc/controller/SSEConsumerController.java,8/0/807f6f9dd0bace508e5522869eeec44e2e0709e5
 j
 :src/main/java/com/ssepoc/service/ReceivedEventService.java,9/e/9eff4e62f63a241dd93fe25984f3b7345ac2e02d
+\
+,src/main/java/com/ssepoc/model/Employee.java,e/4/e48f6b6361faa74659c4b2c6ca8774d632544f5d

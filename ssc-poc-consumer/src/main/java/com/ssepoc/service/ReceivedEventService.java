@@ -1,5 +1,6 @@
 package com.ssepoc.service;
 
+import com.ssepoc.model.Employee;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -8,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class ReceivedEventService {
 
 
-    public void logReceivedMessage(String data) {
+    public void logReceivedMessage(Employee data) {
         log.info("Received event: {}", data);
     }
 }
