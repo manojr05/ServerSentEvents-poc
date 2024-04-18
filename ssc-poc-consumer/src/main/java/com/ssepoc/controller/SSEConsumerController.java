@@ -1,5 +1,7 @@
 package com.ssepoc.controller;
+
 import com.ssepoc.service.ReceivedEventService;
+import com.ssepoc.util.ExtractObjects;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.*;
@@ -62,8 +64,17 @@ public class SSEConsumerController {
                                 if (line != null && !line.isEmpty()) {
                                     stringBuilder.get().append(line).append("\n");
                                 } else {
-                                    sink.next(ServerSentEvent.builder(stringBuilder.get().toString()).build());
-                                    receivedEventService.logReceivedMessage(stringBuilder.toString());
+                                    // Parse the received data into separate fields
+                                    String[] parts = stringBuilder.toString().split("\n");
+                                    String data = parts[2].substring(5);
+                                    String id = parts[0].substring(3);
+                                    String event = parts[1].substring(6);
+                                    String timeStamp = parts[3].substring(6);
+                                    if (data != null) {
+                                        receivedEventService.logReceivedMessage(data);
+                                        ExtractObjects.extractObjects(data);
+                                        sink.next(ServerSentEvent.builder(data + ":" + timeStamp).id(id).event(event).build());
+                                    }
                                     stringBuilder.set(new StringBuilder());
                                 }
                             }

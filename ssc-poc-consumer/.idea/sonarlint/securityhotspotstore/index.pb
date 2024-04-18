@@ -11,3 +11,9 @@ j
 :src/main/java/com/ssepoc/service/ReceivedEventService.java,9/e/9eff4e62f63a241dd93fe25984f3b7345ac2e02d
 \
 ,src/main/java/com/ssepoc/model/Employee.java,e/4/e48f6b6361faa74659c4b2c6ca8774d632544f5d
+a
+1src/main/java/com/ssepoc/util/ExtractObjects.java,d/5/d5b9bb4d8e6f65d13406cbef5fadb6a2978bb150
+]
+-src/main/java/com/ssepoc/model/EndDevice.java,2/0/20eacb513c2250a50098a218061f60fb85df9141
+`
+0src/main/java/com/ssepoc/model/SLabelButton.java,0/d/0dc4a08dd4e87ab525b23273709746a83e1ed0c7
