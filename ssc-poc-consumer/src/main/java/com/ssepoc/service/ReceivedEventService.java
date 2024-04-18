@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 public class ReceivedEventService {
 
 
-    public void logReceivedMessage(Employee data) {
+    public void logReceivedMessage(String data) {
         log.info("Received event: {}", data);
     }
 }
