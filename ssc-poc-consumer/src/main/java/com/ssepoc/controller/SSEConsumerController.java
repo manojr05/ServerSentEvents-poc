@@ -1,5 +1,6 @@
 package com.ssepoc.controller;
 
+import com.ssepoc.model.Employee;
 import com.ssepoc.service.ReceivedEventService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.codec.ServerSentEvent;
@@ -15,16 +16,16 @@ public class SSEConsumerController {
     private final ReceivedEventService receivedEventService;
 
     @GetMapping("/consume")
-    public Flux<ServerSentEvent<String>> subscribeToSSE() {
+    public Flux<ServerSentEvent<Employee>> subscribeToSSE() {
         WebClient client = WebClient.create("http://localhost:8080");
 
         return client.get()
                 .uri("/events")
                 .retrieve()
-                .bodyToFlux(String.class)
+                .bodyToFlux(Employee.class)
                 .map(data -> {
                     receivedEventService.logReceivedMessage(data);
-                    return ServerSentEvent.<String>builder().data(data).build();
+                    return ServerSentEvent.<Employee>builder().data(data).build();
                 });
     }
 }
