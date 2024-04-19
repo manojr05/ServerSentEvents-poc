@@ -2,6 +2,8 @@ package com.ssepoc.util;
 
 import com.ssepoc.model.EndDevice;
 import com.ssepoc.model.SLabelButton;
+import com.ssepoc.model.SLabelPickingStatus;
+import com.ssepoc.model.enums.Event;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.regex.Matcher;
@@ -10,12 +12,17 @@ import java.util.regex.Pattern;
 @Slf4j
 public class ExtractObjects {
 
-    public static void extractObjects(String input){
-        EndDevice endDevice = extractEndDevice(input);
-        SLabelButton sLabelButton = extractSLabelButton(input);
+    public static void extractObjects(String input, String event){
+        if(event.equals(Event.ALARM_STATUS.toString())){
+            EndDevice endDevice = extractEndDevice(input);
+            SLabelButton sLabelButton = extractSLabelButton(input);
+            log.info("EndDevice: {}", endDevice);
+            log.info("SLabelButton: {}", sLabelButton);
+        }else {
+            SLabelPickingStatus sLabelPickingStatus = extractSLabelPickingStatus(input);
+            log.info("SLabelPickingStatus: {}", sLabelPickingStatus);
+        }
 
-        log.info("EndDevice: {}", endDevice);
-        log.info("SLabelButton: {}", sLabelButton);
 
     }
 
@@ -44,6 +51,22 @@ public class ExtractObjects {
             return new SLabelButton(alarmStatus, mode, buttonNumber);
         } else {
             throw new IllegalArgumentException("Invalid input format for SLabelButton");
+        }
+    }
+
+    private static SLabelPickingStatus extractSLabelPickingStatus(String input) {
+        Pattern pattern = Pattern.compile("SLabelPickingStatus\\(code=(\\w+), pickingLinkStatus=(\\w+), ledColor=(\\w+), requestPickingDate=(.*), pickingDate=(.*)\\)");
+        Matcher matcher = pattern.matcher(input);
+
+        if (matcher.find()) {
+            String code = matcher.group(1);
+            String pickingLinkStatus = matcher.group(2);
+            String ledColor = matcher.group(3);
+            String requestPickingDate = matcher.group(4);
+            String pickingDate = matcher.group(5);
+            return new SLabelPickingStatus(code, pickingLinkStatus, ledColor, requestPickingDate, pickingDate);
+        } else {
+            throw new IllegalArgumentException("Invalid input format for SLabelPickingStatus");
         }
     }
 
