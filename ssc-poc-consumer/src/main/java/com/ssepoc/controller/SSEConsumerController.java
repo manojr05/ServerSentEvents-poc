@@ -70,9 +70,9 @@ public class SSEConsumerController {
                                     String id = parts[0].substring(3);
                                     String event = parts[1].substring(6);
                                     String data = parts[2].substring(5);
-                                    String timeStamp = parts[3].substring(6);
+                                    String timeStamp = parts[3].substring(0);
                                     if (data != null &&event!=null) {
-                                        receivedEventService.logReceivedMessage(data);
+                                        receivedEventService.logReceivedMessage(stringBuilder.toString());
                                         ExtractObjects.extractObjects(data, event);
                                         sink.next(ServerSentEvent.builder(data).id(id).event(event).comment(LocalDateTime.now().toString()).build());
                                     }

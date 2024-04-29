@@ -1,11 +1,13 @@
 
 x
-java:S1141?"5Extract this nested try block into a separate method.(ƒµπλ8Ω¤Ξ¥ο1J$7feccf29-06fe-48bd-abeb-599b2a429632
+java:S1141?"5Extract this nested try block into a separate method.(ƒµπλ8Ω¤Ξ¥ο1J$7a790300-791a-457a-b69e-cdc2cd13912c
 •
-java:S3776""RRefactor this method to reduce its Cognitive Complexity from 27 to the 15 allowed.(ας£8ο¤Ξ¥ο1J$f9bfb1b6-bda2-4c8f-b1ea-9b98d15b7ed0
+java:S3776""RRefactor this method to reduce its Cognitive Complexity from 27 to the 15 allowed.(ας£8ο¤Ξ¥ο1J$b17af4d9-7331-46ca-9fe7-d8249349ff9e
 n
-java:S1602'",Remove useless curly braces around statement(—€ΥU8σ¤Ξ¥ο1J$599cdf7d-c60f-4bb8-a63e-870dbc5d1826
+java:S1602'",Remove useless curly braces around statement(—€ΥU8σ¤Ξ¥ο1J$620b8d1d-521f-4015-8102-12075e28adde
+
+java:S2121I"9Remove this "substring" call; it has predictable results.(­“Αϊÿÿÿÿ8ªΟρ©ο1J$06af57a6-87fc-4044-85a3-62b40a6a4f05
 v
-java:S1481I".Remove this unused "timeStamp" local variable.(ΒΑ–όÿÿÿÿÿ8ϊζ‹¦ο1J$17be543f-f69c-421e-a11a-9939de4184d3
+java:S1481I".Remove this unused "timeStamp" local variable.(­“Αϊÿÿÿÿ8ϊζ‹¦ο1J$670eaad7-77f7-4273-a318-b79f9e90bdc4
 |
-java:S1128"9Remove this unused import 'com.ssepoc.model.enums.Event'.(¦Τ‡δ8ς¦ο1J$57e7e02e-6e77-4ba8-ae7f-1503b6bccad8
+java:S1128"9Remove this unused import 'com.ssepoc.model.enums.Event'.(¦Τ‡δ8ς¦ο1J$5e137c27-dbb1-46c8-afd4-8c9f7c827f08

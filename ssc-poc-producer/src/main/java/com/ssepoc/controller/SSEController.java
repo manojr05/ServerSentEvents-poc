@@ -14,9 +14,10 @@ public class SSEController {
     private OffsetDateTime timestamp = OffsetDateTime.now();
     private final Flux<ServerSentEvent<String>> eventFlux = eventProcessor.map(data ->
             ServerSentEvent.<String>builder()
-                    .event("PICKING_STATUS")
+                    .event("ALARM_STATUS")
                     .id("9dab5c75-05fe-4a8d-8e2b-4d4a359a9402")
-                    .data(data + "\n:" + timestamp)
+                    .data(data)
+                    .comment(timestamp.toString())
                     .build());
 
     @PostMapping("/send-event")

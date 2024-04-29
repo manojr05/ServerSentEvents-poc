@@ -13,10 +13,6 @@ a
 -src/main/java/com/ssepoc/model/EndDevice.java,2/0/20eacb513c2250a50098a218061f60fb85df9141
 `
 0src/main/java/com/ssepoc/model/SLabelButton.java,0/d/0dc4a08dd4e87ab525b23273709746a83e1ed0c7
-Y
-)src/main/java/com/ssepoc/model/Event.java,1/b/1b8720fb6f2873380c420b1e8ab9fdcf2bb6cc78
-^
-.src/main/java/com/ssepoc/model/enum/Event.java,7/c/7c9a06872ad033e3f526357bcb3248897a45f593
 _
 /src/main/java/com/ssepoc/model/enums/Event.java,2/5/2520dfcee4bb6a0c6eefd42738ef6c6f0da6d548
 g
